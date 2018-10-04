@@ -15,17 +15,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class RetrofitModule {
 
-//    @Inject
-//    RetrofitModule(){
-//
-//    }
-
+    @RandomRuntimeScope
     @Provides
     public Retrofit getRetrofit(GsonConverterFactory gsonConverterFactory){
         return new Retrofit.Builder().baseUrl("https://jsonplaceholder.typicode.com").client(new OkHttpClient()).addConverterFactory(gsonConverterFactory).build();
 
     }
 
+    @RandomUserApplicationScope
     @Provides
     public Gson getGson(){
         GsonBuilder gson=new GsonBuilder();

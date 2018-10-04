@@ -14,6 +14,8 @@ import com.nitkarsh.modules.RandomService;
 
 import java.util.List;
 
+import javax.inject.Named;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

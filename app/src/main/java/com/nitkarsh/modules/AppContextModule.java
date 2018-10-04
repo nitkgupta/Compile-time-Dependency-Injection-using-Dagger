@@ -2,30 +2,22 @@ package com.nitkarsh.modules;
 
 import android.content.Context;
 
-import javax.inject.Inject;
 import javax.inject.Named;
-import javax.inject.Scope;
 
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class ContextModule {
+public class AppContextModule {
 
     private Context context;
-
-//    @Inject
-//    ContextModule(){
-//
-//    }
-
-    public ContextModule(Context context){
+    public AppContextModule(Context context){
         this.context=context;
     }
 
-    @Named("activity_context")
+    @Named("application_context")
     @Provides
-    public Context getContext(){
+    private Context getContext(){
         return context.getApplicationContext();
     }
 
