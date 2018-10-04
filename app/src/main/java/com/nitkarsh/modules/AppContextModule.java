@@ -17,7 +17,7 @@ public class AppContextModule {
 
     @Named("application_context")
     @Provides
-    private Context getContext(){
+    public Context getContext(){
         return context.getApplicationContext();
     }
 

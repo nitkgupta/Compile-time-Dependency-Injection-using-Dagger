@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.nitkarsh.daggercontext.RandomData;
 
 import javax.inject.Inject;
+import javax.inject.Scope;
 
 import dagger.Module;
 import dagger.Provides;
@@ -12,17 +13,16 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 @Module
 public class RetrofitModule {
 
-    @RandomRuntimeScope
     @Provides
     public Retrofit getRetrofit(GsonConverterFactory gsonConverterFactory){
         return new Retrofit.Builder().baseUrl("https://jsonplaceholder.typicode.com").client(new OkHttpClient()).addConverterFactory(gsonConverterFactory).build();
 
     }
 
-    @RandomUserApplicationScope
     @Provides
     public Gson getGson(){
         GsonBuilder gson=new GsonBuilder();

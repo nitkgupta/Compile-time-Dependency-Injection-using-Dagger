@@ -14,16 +14,10 @@ public class ContextModule {
 
     private Context context;
 
-//    @Inject
-//    ContextModule(){
-//
-//    }
-
     public ContextModule(Context context){
         this.context=context;
     }
 
-    @Named("activity_context")
     @Provides
     public Context getContext(){
         return context.getApplicationContext();

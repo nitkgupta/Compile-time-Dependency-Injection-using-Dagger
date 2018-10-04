@@ -14,6 +14,7 @@ import com.nitkarsh.modules.RandomService;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import retrofit2.Call;
@@ -23,8 +24,8 @@ import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Retrofit retrofit;
     RandomService randomService;
+    private Retrofit retrofit;
     List<RetroData> list;
     RecyclerView recyclerView;
     @Override
